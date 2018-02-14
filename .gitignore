@@ -1,0 +1,8 @@
+.buildpath
+.cache
+.metadata
+.project
+.idea
+/vendor/
+!**/.gitkeep
+!**/.gitignore
