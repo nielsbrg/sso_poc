@@ -1,0 +1,10 @@
+.buildpath
+.cache
+.metadata
+.project
+.idea
+/vendor/
+/composer.phar
+/composer.lock
+!**/.gitkeep
+!**/.gitignore
