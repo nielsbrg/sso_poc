@@ -5,9 +5,10 @@
         echo 'logged in';
     }
     else {
-        $resource = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-        $target = $IDP_HOST . ':' . $IDP_PORT;
-        header('Location: ' . $target . '?origin=' . $_SERVER['HTTP_HOST'] . '&resource=' . $resource);
+        $target = IDP_HOST . ':' . IDP_PORT;
+        $origin = '?origin=' . $_SERVER['HTTP_HOST'];
+        $resource = '&resource='. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        header('Location: '.$target.$origin.$resource);
         die();
     }
 ?>
