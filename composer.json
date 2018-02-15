@@ -1,0 +1,7 @@
+{
+    "name": "sso/sp1",
+    "description": "Service provider voor de SSO poc",
+    "require": {
+        "slim/slim": "^3.0"
+    }
+}
