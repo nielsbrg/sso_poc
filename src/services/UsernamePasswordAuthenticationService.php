@@ -19,7 +19,7 @@ class UsernamePasswordAuthenticationService implements AuthenticationService
         }
     }
 
-    public function accessUserDetails($systemId, $userInput) {
+    private function accessUserDetails($systemId, $userInput) {
         return $this->db->sendQuery(
             "SELECT * FROM User WHERE system_id=:sys_id AND username=:username AND password=:password",
             ['sys_id' => intval($systemId), 'username' => $userInput['username'], 'password' => $userInput['password']])->fetch();
