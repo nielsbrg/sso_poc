@@ -1,0 +1,23 @@
+DROP DATABASE IF EXISTS sso_sp2_db;
+
+CREATE DATABASE sso_sp2_db;
+
+USE sso_sp2_db;
+
+CREATE TABLE `user` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`username` VARCHAR(255) NOT NULL,
+	`password` VARCHAR(255) NOT NULL,
+	`firstname` VARCHAR(255) NOT NULL,
+	`surname` VARCHAR(255) NOT NULL,
+	`email` VARCHAR(255) NOT NULL,
+	`phone` VARCHAR(255) NULL DEFAULT NULL,
+	`mobilePhone` VARCHAR(255) NULL DEFAULT NULL,
+	`roleId` INT(11) NOT NULL,
+	PRIMARY KEY (`id`),
+	UNIQUE INDEX `username_UNIQUE` (`username`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=33
+;

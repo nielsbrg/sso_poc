@@ -1,0 +1,5 @@
+{
+    "name": "sso/sp2",
+    "description": "Service provider voor de SSO poc",
+    "require": {}
+}
