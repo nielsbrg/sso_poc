@@ -12,17 +12,25 @@ class UsernamePasswordAuthenticationService implements AuthenticationService
 
     public function auth($origin, $userInput) {
         $hashed_pw = password_hash($userInput['password'], PASSWORD_DEFAULT);
-        $user = $this->accessUserDetails($this->getSystemByDomain($origin), $userInput['username'], $hashed_pw);
+        $system_id = $this->getSystemByDomain($origin);
+        $user = $this->accessUserDetails($system_id, $userInput['username'], $hashed_pw);
 
         if(!$user) {
-            $this->validateUnknownUser($userInput['username'], $hashed_pw);
+            $migrationApiUrl = $this->getMigrationApiById($system_id);
+            $apiAuthResponse = $this->authenticateWithMigrationApi($migrationApiUrl);
+            if($apiAuthResponse->succeeded) {
+                $apiValidateResponse = $this->validateUnknownUser($migrationApiUrl, $userInput, $apiAuthResponse->jwt);
+                if($apiValidateResponse['isValidUser']) {
+
+                }
+            }
         }
     }
 
-    private function accessUserDetails($systemId, $userInput) {
+    private function accessUserDetails($systemId, $username, $password) {
         return $this->db->sendQuery(
-            "SELECT * FROM User WHERE system_id=:sys_id AND username=:username AND password=:password",
-            ['sys_id' => intval($systemId), 'username' => $userInput['username'], 'password' => $userInput['password']])->fetch();
+            "SELECT * FROM User WHERE system_id=:sys_id AND username=:user AND password=:pass",
+            ['sys_id' => intval($systemId), 'user' => $username, 'pass' => $password])->fetch();
     }
 
     private function getSystemByDomain($domain_name) {
@@ -30,7 +38,20 @@ class UsernamePasswordAuthenticationService implements AuthenticationService
             ['origin' => '%' . $domain_name . '%'])->fetch());
     }
 
-    private function validateUnknownUser($userInput) {
+    private function getMigrationApiById($systemId) {
+        return $this->db->sendQuery("SELECT api_url FROM SystemMigrationApi WHERE system_id=:system_id",
+            ['system_id' => $systemId])->fetch()['api_url'];
+    }
+
+    private function authenticateWithMigrationApi($apiUrl) {
+        $response = Requests::post($apiUrl . '/auth', array(), array('sso_password' => SSO_PASSWORD));
+        return json_decode($response->body);
+    }
+
+    private function validateUnknownUser($apiUrl, $userInput, $authToken) {
         //TODO: Check with origin API to see if input was valid locally.
+        $body = ['username' => $userInput['username'], 'password' => $userInput['password']];
+        $response = Requests::post($apiUrl . '/users/validate', array('Authorization' => 'Bearer ' . $authToken), $body);
+        return json_decode($response->body);
     }
 }

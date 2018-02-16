@@ -1,5 +1,7 @@
 <?php
     require_once('config/idp_config.php');
+    require_once('../vendor/rmccue/requests/library/Requests.php');
+    Requests::register_autoloader();
     require_once('database/DatabaseConnection.php');
     require_once('services/UsernamePasswordAuthenticationService.php');
 

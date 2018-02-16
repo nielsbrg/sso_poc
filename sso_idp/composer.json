@@ -1,5 +1,7 @@
 {
     "name": "sso/idp",
     "description": "Service provider voor de SSO poc",
-    "require": {}
+    "require": {
+        "rmccue/requests": "^1.7"
+    }
 }
