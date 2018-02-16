@@ -1,5 +1,0 @@
-{
-    "name": "sso/idp",
-    "description": "Service provider voor de SSO poc",
-    "require": {}
-}
