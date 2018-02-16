@@ -35,7 +35,7 @@ $app->post('/users/validate', function (Request $req, Response $res) {
     }
 });
 
-$app->post('/auth', function (Request $request, Response $response, $next) {
+$app->post('/auth', function (Request $request, Response $response) {
     $data = $request->getParsedBody();
     if(!empty($data['sso_password']) && $data['sso_password'] == SSO_PASSWORD) {
         return $response->withJson(['succeeded' => true, 'jwt' => generateJWT() . '']);
