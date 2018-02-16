@@ -18,6 +18,14 @@ CREATE TABLE SystemDomain (
 		REFERENCES System(system_id)
 );
 
+CREATE TABLE SystemMigrationApi(
+  system_id INT(10) NOT NULL,
+  api_url VARCHAR(255) NOT NULL,
+  CONSTRAINT PK_SystemMigrationApi PRIMARY KEY (system_id),
+  CONSTRAINT FK_SystemMigrationApi_System FOREIGN KEY (system_id)
+    REFERENCES System(system_id)
+);
+
 CREATE TABLE User (
 	system_id INT(10) NOT NULL,
 	user_id INT(10) NOT NULL,
