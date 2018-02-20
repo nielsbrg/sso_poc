@@ -9,3 +9,5 @@ This example implementation will demonstrate the following concepts:
 - An implementation of the federated identity pattern
 - REST API authentication using one-time JSON Web Tokens
 
+In this example there is one identity provider (sso_idp) and two service providers (sp1 and sp2). 
+The service providers each have their own database with users. This example does not deal with multiple methods of authentication.
