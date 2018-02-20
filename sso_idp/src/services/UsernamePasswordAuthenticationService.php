@@ -4,14 +4,14 @@ class UsernamePasswordAuthenticationService implements AuthenticationService
 {
     private $db;
     private $userMigrationService;
-    private $sessionGenerator;
+    private $sessionService;
     private $session;
     private $userInfo;
 
-    public function __construct($db) {
+    public function __construct($db, $sessionService) {
         $this->db = $db;
         $this->userMigrationService = new UserMigrationService($db);
-        $this->sessionGenerator = new UserSessionService($db);
+        $this->sessionService = $sessionService;
     }
 
     public function auth($origin, $userInput) {
@@ -40,10 +40,10 @@ class UsernamePasswordAuthenticationService implements AuthenticationService
     }
 
     private function onAuthenticatedUser($system_id, $user_id) {
-        $this->sessionGenerator->deleteSessionsForUser($system_id, $user_id);
-        $this->session = $this->sessionGenerator->createNewSession($system_id, $user_id);
+        $this->sessionService->deleteSessionsForUser($system_id, $user_id);
+        $this->session = $this->sessionService->createNewSession($system_id, $user_id);
         $this->userInfo = ['system_id' => $system_id, 'user_id' => $user_id];
-        $this->sessionGenerator->saveSession($this->session);
+        $this->sessionService->saveSession($this->session);
     }
 
     private function getSystemByDomain($domain_name) {

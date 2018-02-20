@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8aa970a5-5980-4c6b-97fa-a84aa762deef" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/sso_idp/src/services/MigrationService.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/sso_idp/sql/DDL_IDP.sql" afterPath="$PROJECT_DIR$/sso_idp/sql/DDL_IDP.sql" />
       <change beforePath="$PROJECT_DIR$/sso_idp/src/index.php" afterPath="$PROJECT_DIR$/sso_idp/src/index.php" />
-      <change beforePath="$PROJECT_DIR$/sso_idp/src/services/AuthenticationService.php" afterPath="$PROJECT_DIR$/sso_idp/src/services/AuthenticationService.php" />
-      <change beforePath="$PROJECT_DIR$/sso_idp/src/services/UserMigrationService.php" afterPath="$PROJECT_DIR$/sso_idp/src/services/UserMigrationService.php" />
+      <change beforePath="$PROJECT_DIR$/sso_idp/src/services/SessionGeneration.php" afterPath="$PROJECT_DIR$/sso_idp/src/services/SessionManagement.php" />
+      <change beforePath="$PROJECT_DIR$/sso_idp/src/services/SessionProvider.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/sso_idp/src/services/UserSessionService.php" afterPath="$PROJECT_DIR$/sso_idp/src/services/UserSessionService.php" />
       <change beforePath="$PROJECT_DIR$/sso_idp/src/services/UsernamePasswordAuthenticationService.php" afterPath="$PROJECT_DIR$/sso_idp/src/services/UsernamePasswordAuthenticationService.php" />
-      <change beforePath="$PROJECT_DIR$/sso_sp1/sql/DML_SP1.sql" afterPath="$PROJECT_DIR$/sso_sp1/sql/DML_SP1.sql" />
-      <change beforePath="$PROJECT_DIR$/sso_sp1/src/api/UserValidationService.php" afterPath="$PROJECT_DIR$/sso_sp1/src/api/UserValidationService.php" />
-      <change beforePath="$PROJECT_DIR$/sso_sp1/src/api/index.php" afterPath="$PROJECT_DIR$/sso_sp1/src/api/index.php" />
       <change beforePath="$PROJECT_DIR$/sso_sp1/src/index.php" afterPath="$PROJECT_DIR$/sso_sp1/src/index.php" />
       <change beforePath="$PROJECT_DIR$/sso_sp2/src/index.php" afterPath="$PROJECT_DIR$/sso_sp2/src/index.php" />
     </list>
@@ -30,21 +26,11 @@
       <file leaf-file-name="UsernamePasswordAuthenticationService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sso_idp/src/services/UsernamePasswordAuthenticationService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="17" column="55" lean-forward="false" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+            <state relative-caret-position="544">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
-                <marker date="1519122901351" expanded="true" signature="1662:1727" ph="SELECT syste... SystemDomain" />
+                <marker date="1519126161083" expanded="true" signature="1657:1722" ph="SELECT syste... SystemDomain" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="idp_config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sso_idp/src/config/idp_config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -52,11 +38,12 @@
       <file leaf-file-name="UserSessionService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sso_idp/src/services/UserSessionService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding>
-                <marker date="1519051283183" expanded="true" signature="1005:1072" ph="DELETE FROM SystemUserSession... " />
-                <marker date="1519051283183" expanded="true" signature="1434:1563" ph="INSERT INTO SystemUserSession... " />
+                <marker date="1519126108850" expanded="true" signature="389:468" ph="SELECT * FRO... SystemUserSession" />
+                <marker date="1519126108850" expanded="true" signature="1108:1175" ph="DELETE FROM SystemUserSession... " />
+                <marker date="1519126108850" expanded="true" signature="1537:1666" ph="INSERT INTO SystemUserSession... " />
               </folding>
             </state>
           </provider>
@@ -65,9 +52,12 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sso_sp1/src/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="391">
+              <caret line="23" column="2" lean-forward="true" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+              <folding>
+                <marker date="1519129727581" expanded="true" signature="758:868" ph="..." />
+                <marker date="1519129727581" expanded="true" signature="960:1067" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,18 +65,25 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sso_sp2/src/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="255">
+              <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+              <folding>
+                <marker date="1519130289754" expanded="true" signature="748:778" ph="..." />
+                <marker date="1519130289754" expanded="true" signature="748:858" ph="..." />
+                <marker date="1519130289754" expanded="true" signature="938:1003" ph="..." />
+                <marker date="1519130289754" expanded="true" signature="938:1004" ph="..." />
+                <marker date="1519130289754" expanded="true" signature="938:1034" ph="..." />
+                <marker date="1519130289754" expanded="true" signature="1026:1034" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SessionValidation.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sso_sp1/src/SessionValidation.php">
+      <file leaf-file-name="logout.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sso_idp/src/logout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="561">
+              <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -95,18 +92,13 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sso_idp/src/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+            <state relative-caret-position="237">
+              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
               <folding>
-                <marker date="1519123624573" expanded="true" signature="2326:2811" ph="..." />
-                <marker date="1519123624573" expanded="true" signature="2337:2803" ph="..." />
-                <marker date="1519123624573" expanded="true" signature="2401:2791" ph="..." />
-                <marker date="1519123624573" expanded="true" signature="2419:2447" ph="..." />
-                <marker date="1519123624573" expanded="true" signature="2419:2552" ph="..." />
-                <marker date="1519123624573" expanded="true" signature="2570:2598" ph="..." />
-                <marker date="1519123624573" expanded="true" signature="2570:2699" ph="..." />
-                <marker date="1519123624573" expanded="true" signature="2717:2746" ph="..." />
-                <marker date="1519123624573" expanded="true" signature="2717:2775" ph="..." />
+                <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1519130163788" expanded="true" signature="2395:2423" ph="..." />
+                <marker date="1519130163788" expanded="true" signature="2563:2618" ph="..." />
+                <marker date="1519130163788" expanded="true" signature="2737:2766" ph="..." />
               </folding>
             </state>
           </provider>
@@ -132,14 +124,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SessionProvider.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sso_idp/src/services/SessionProvider.php">
+      <file leaf-file-name="SessionManagement.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sso_idp/src/services/SessionManagement.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-              <folding>
-                <marker date="1519118679194" expanded="true" signature="375:454" ph="SELECT * FRO... SystemUserSession" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -171,16 +161,20 @@
         <option value="$PROJECT_DIR$/sso_idp/src/services/SessionGenerator.php" />
         <option value="$PROJECT_DIR$/sso_idp/src/services/SessionGeneration.php" />
         <option value="$PROJECT_DIR$/sso_idp/src/services/UserMigrationService.php" />
-        <option value="$PROJECT_DIR$/sso_idp/src/services/UserSessionService.php" />
         <option value="$PROJECT_DIR$/sso_idp/src/models/UserSession.php" />
         <option value="$PROJECT_DIR$/sso_sp1/src/sso_response.php" />
         <option value="$PROJECT_DIR$/sso_sp1/src/api/index.php" />
         <option value="$PROJECT_DIR$/sso_idp/src/services/CookieProvider.php" />
         <option value="$PROJECT_DIR$/sso_idp/src/services/SessionProvider.php" />
         <option value="$PROJECT_DIR$/sso_idp/src/getSession.php" />
-        <option value="$PROJECT_DIR$/sso_sp1/src/index.php" />
         <option value="$PROJECT_DIR$/sso_idp/src/services/AuthenticationService.php" />
+        <option value="$PROJECT_DIR$/sso_idp/logout.php" />
+        <option value="$PROJECT_DIR$/sso_idp/src/services/SessionManager.php" />
+        <option value="$PROJECT_DIR$/sso_idp/src/services/SessionManagement.php" />
+        <option value="$PROJECT_DIR$/sso_idp/src/services/UserSessionService.php" />
         <option value="$PROJECT_DIR$/sso_idp/src/services/UsernamePasswordAuthenticationService.php" />
+        <option value="$PROJECT_DIR$/sso_idp/src/logout.php" />
+        <option value="$PROJECT_DIR$/sso_sp1/src/index.php" />
         <option value="$PROJECT_DIR$/sso_idp/src/index.php" />
         <option value="$PROJECT_DIR$/sso_sp2/src/index.php" />
       </list>
@@ -219,7 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -243,20 +236,6 @@
               <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="sso_idp" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sso_idp" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sso_idp" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
@@ -293,10 +272,18 @@
               <item name="sso_sp2" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sso_sp2" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -307,14 +294,15 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/htdocs/sso_poc/sso_sp1/sql/DML_SP1.sql" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\htdocs\sso_poc\sso_idp\src\services" />
-      <recent name="D:\htdocs\sso_poc\sso_idp\src\interfaces" />
-      <recent name="D:\htdocs\sso_poc\sso_idp\src\models" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\htdocs\sso_poc" />
       <recent name="D:\htdocs\sso_poc\sso_sp1\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\htdocs\sso_poc\sso_idp\src" />
+      <recent name="D:\htdocs\sso_poc\sso_idp\src\services" />
+      <recent name="D:\htdocs\sso_poc\sso_idp\src\interfaces" />
+      <recent name="D:\htdocs\sso_poc\sso_idp\src\models" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -344,22 +332,24 @@
       <updated>1518779003443</updated>
       <workItem from="1518779005275" duration="13882000" />
       <workItem from="1519026867129" duration="27088000" />
-      <workItem from="1519112162279" duration="11754000" />
+      <workItem from="1519112162279" duration="12754000" />
+      <workItem from="1519125230397" duration="3014000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52724000" />
+    <option name="totallyTimeSpent" value="56738000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2553305" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25799572" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -371,7 +361,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -388,30 +377,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sso_idp/src/services/UserSessionService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-          <folding>
-            <marker date="1519051283183" expanded="true" signature="1005:1072" ph="DELETE FROM SystemUserSession... " />
-            <marker date="1519051283183" expanded="true" signature="1434:1563" ph="INSERT INTO SystemUserSession... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sso_sp1/src/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sso_sp2/src/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding />
+          <folding>
+            <marker date="1519130289754" expanded="true" signature="748:778" ph="..." />
+            <marker date="1519130289754" expanded="true" signature="748:858" ph="..." />
+            <marker date="1519130289754" expanded="true" signature="938:1003" ph="..." />
+            <marker date="1519130289754" expanded="true" signature="938:1004" ph="..." />
+            <marker date="1519130289754" expanded="true" signature="938:1034" ph="..." />
+            <marker date="1519130289754" expanded="true" signature="1026:1034" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -431,14 +408,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sso_sp1/src/sso_response.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sso_sp1/src/sso_response.php" />
     <entry file="file://$PROJECT_DIR$/sso_idp/src/models/UserSession.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -452,15 +422,10 @@
         <state relative-caret-position="425">
           <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
           <folding>
-            <marker date="1519123624573" expanded="true" signature="2326:2811" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2337:2803" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2401:2791" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2419:2447" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2419:2552" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2570:2598" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2570:2699" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2717:2746" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2717:2775" ph="..." />
+            <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1519130163788" expanded="true" signature="2395:2423" ph="..." />
+            <marker date="1519130163788" expanded="true" signature="2563:2618" ph="..." />
+            <marker date="1519130163788" expanded="true" signature="2737:2766" ph="..." />
           </folding>
         </state>
       </provider>
@@ -470,7 +435,7 @@
         <state relative-caret-position="425">
           <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
           <folding>
-            <marker date="1519122901351" expanded="true" signature="1662:1727" ph="SELECT syste... SystemDomain" />
+            <marker date="1519126161083" expanded="true" signature="1657:1722" ph="SELECT syste... SystemDomain" />
           </folding>
         </state>
       </provider>
@@ -506,7 +471,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1519129727581" expanded="true" signature="758:868" ph="..." />
+            <marker date="1519129727581" expanded="true" signature="960:1067" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -642,19 +610,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sso_idp/src/services/JWTService.php" />
-    <entry file="file://$PROJECT_DIR$/sso_idp/src/services/SessionGeneration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="58" lean-forward="false" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sso_idp/src/services/TokenService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -709,33 +668,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sso_sp1/src/sso_response.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sso_sp1/src/sso_response.php" />
     <entry file="file://$PROJECT_DIR$/sso_idp/src/config/idp_config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sso_idp/src/services/SessionProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding>
-            <marker date="1519118679194" expanded="true" signature="375:454" ph="SELECT * FRO... SystemUserSession" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sso_idp/src/getSession.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
@@ -743,6 +677,7 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sso_idp/src/getSession.php" />
     <entry file="file://$PROJECT_DIR$/sso_idp/src/services/AuthenticationService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -751,14 +686,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sso_idp/src/services/UserSessionService.php">
+    <entry file="file://$PROJECT_DIR$/sso_idp/src/services/SessionManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <marker date="1519051283183" expanded="true" signature="1005:1072" ph="DELETE FROM SystemUserSession... " />
-            <marker date="1519051283183" expanded="true" signature="1434:1563" ph="INSERT INTO SystemUserSession... " />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -770,47 +702,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sso_idp/src/services/UsernamePasswordAuthenticationService.php">
+    <entry file="file://$PROJECT_DIR$/sso_idp/src/services/UserSessionService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="17" column="55" lean-forward="false" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+        <state relative-caret-position="255">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding>
-            <marker date="1519122901351" expanded="true" signature="1662:1727" ph="SELECT syste... SystemDomain" />
+            <marker date="1519126108850" expanded="true" signature="389:468" ph="SELECT * FRO... SystemUserSession" />
+            <marker date="1519126108850" expanded="true" signature="1108:1175" ph="DELETE FROM SystemUserSession... " />
+            <marker date="1519126108850" expanded="true" signature="1537:1666" ph="INSERT INTO SystemUserSession... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sso_sp1/src/index.php">
+    <entry file="file://$PROJECT_DIR$/sso_idp/src/services/SessionManagement.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        <state relative-caret-position="85">
+          <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sso_idp/src/services/UsernamePasswordAuthenticationService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <marker date="1519126161083" expanded="true" signature="1657:1722" ph="SELECT syste... SystemDomain" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sso_sp2/src/config/sp_config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sso_idp/src/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sso_idp/src/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+        <state relative-caret-position="237">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
           <folding>
-            <marker date="1519123624573" expanded="true" signature="2326:2811" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2337:2803" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2401:2791" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2419:2447" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2419:2552" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2570:2598" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2570:2699" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2717:2746" ph="..." />
-            <marker date="1519123624573" expanded="true" signature="2717:2775" ph="..." />
+            <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1519130163788" expanded="true" signature="2395:2423" ph="..." />
+            <marker date="1519130163788" expanded="true" signature="2563:2618" ph="..." />
+            <marker date="1519130163788" expanded="true" signature="2737:2766" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sso_sp1/src/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="2" lean-forward="true" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+          <folding>
+            <marker date="1519129727581" expanded="true" signature="758:868" ph="..." />
+            <marker date="1519129727581" expanded="true" signature="960:1067" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sso_sp2/src/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="255">
+          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding>
+            <marker date="1519130289754" expanded="true" signature="748:778" ph="..." />
+            <marker date="1519130289754" expanded="true" signature="748:858" ph="..." />
+            <marker date="1519130289754" expanded="true" signature="938:1003" ph="..." />
+            <marker date="1519130289754" expanded="true" signature="938:1004" ph="..." />
+            <marker date="1519130289754" expanded="true" signature="938:1034" ph="..." />
+            <marker date="1519130289754" expanded="true" signature="1026:1034" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
