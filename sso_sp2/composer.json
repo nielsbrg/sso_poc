@@ -1,5 +1,8 @@
 {
     "name": "sso/sp2",
-    "description": "Service provider voor de SSO poc",
-    "require": {}
+    "description": "Service provider 2 voor de SSO poc",
+    "require": {
+        "slim/slim": "^3.0",
+        "lcobucci/jwt": "^3.2"
+    }
 }
