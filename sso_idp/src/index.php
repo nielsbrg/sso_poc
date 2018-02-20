@@ -1,23 +1,5 @@
 <?php
-    require_once('config/idp_config.php');
-
-    require_once('../vendor/rmccue/requests/library/Requests.php');
-    Requests::register_autoloader();
-
-    require_once('database/DatabaseConnection.php');
-
-    require_once('models/User.php');
-    require_once('models/UserSession.php');
-
-    require_once('services/AuthenticationService.php');
-    require_once('services/MigrationService.php');
-    require_once('services/TokenService.php');
-    require_once('services/SessionManagement.php');
-
-    require_once('services/UserMigrationService.php');
-    require_once('services/SystemService.php');
-    require_once('services/UserSessionService.php');
-    require_once('services/UsernamePasswordAuthenticationService.php');
+    require_once('requires.php');
 
     $db = new DatabaseConnection(DB_HOST, DB_NAME, DB_USER, DB_PASS);
     $sessionManager = new UserSessionService($db);
@@ -30,7 +12,6 @@
         if($authSucceeded) {
             $session = $authenticator->getSession();
             $sys_name = $systemService->getSystemNameById($session->system_id);
-            var_dump($sys_name);
             $SSOCookie = 'SSO_id=' . $session->system_id . '.' . $session->user_id . '';
             $sessionCookie = 'session_id_' . $sys_name . '=' . $session->session_id . ';HttpOnly' .
                 ';Expires=' . date('D, d M Y H:i:s', $session->expires_at_timestamp);
@@ -38,6 +19,9 @@
             header('Set-Cookie: ' . $SSOCookie, false);
             header('Location: ' . 'http://' . $_GET['origin']);
             die();
+        }
+        else {
+            echo 'invalid credentials given';
         }
     }
     else if(isset($_COOKIE['SSO_id'])) {

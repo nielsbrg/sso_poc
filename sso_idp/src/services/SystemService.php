@@ -22,4 +22,8 @@ class SystemService
     public function getSystemNameById($id) {
         return $this->db->sendQuery("SELECT * FROM System WHERE system_id=:id", ['id' => $id])->fetch()['name'];
     }
+
+    public function getSystemNames() {
+        return $this->db->sendQuery("SELECT name FROM System")->fetchAll();
+    }
 }
