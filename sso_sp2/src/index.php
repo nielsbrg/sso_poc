@@ -13,7 +13,7 @@
         die();
     }
 
-    if(isset($_COOKIE['session_id_2'])) {
+    if(isset($_COOKIE['session_id_Klantportaal'])) {
         $loggedIn = true;
     }
 
@@ -27,20 +27,20 @@
     <body>
         <h1>Service provider 2</h1>
 
-    <?php
-    if($loggedIn) {
-        echo '
+        <?php
+        if($loggedIn) {
+            echo '
             <form method="POST">
                 <button name="logoutButton" type="submit" value="logout">Log out</button>
             </form>
             ';
-    }
-    else {
-        echo '
+        }
+        else {
+            echo '
             <form method="POST">
                 <button name="loginButton" type="submit" value="login">Log in</button>
-        ';
-    }
-    ?>
+            ';
+        }
+        ?>
     </body>
 </html>

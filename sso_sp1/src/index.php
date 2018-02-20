@@ -13,7 +13,7 @@
         die();
     }
 
-    if(isset($_COOKIE['session_id'])) {
+    if(isset($_COOKIE['session_id_WMS'])) {
         $loggedIn = true;
     }
 

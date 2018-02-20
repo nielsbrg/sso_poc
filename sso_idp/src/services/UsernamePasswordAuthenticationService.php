@@ -6,16 +6,17 @@ class UsernamePasswordAuthenticationService implements AuthenticationService
     private $userMigrationService;
     private $sessionService;
     private $session;
-    private $userInfo;
+    private $systemService;
 
-    public function __construct($db, $sessionService) {
+    public function __construct($db, $sessionService, $systemService) {
         $this->db = $db;
         $this->userMigrationService = new UserMigrationService($db);
         $this->sessionService = $sessionService;
+        $this->systemService = $systemService;
     }
 
     public function auth($origin, $userInput) {
-        $system_id = $this->getSystemByDomain($origin);
+        $system_id = $this->systemService->getSystemByDomain($origin);
         $user = $this->userMigrationService->getUser($system_id, $userInput);
         if($user) {
             $this->onAuthenticatedUser($system_id, $user->user_id);
@@ -35,19 +36,10 @@ class UsernamePasswordAuthenticationService implements AuthenticationService
         return $this->session;
     }
 
-    public function getUserInfo() {
-        return $this->userInfo;
-    }
-
     private function onAuthenticatedUser($system_id, $user_id) {
         $this->sessionService->deleteSessionsForUser($system_id, $user_id);
         $this->session = $this->sessionService->createNewSession($system_id, $user_id);
-        $this->userInfo = ['system_id' => $system_id, 'user_id' => $user_id];
         $this->sessionService->saveSession($this->session);
     }
 
-    private function getSystemByDomain($domain_name) {
-        return intval($this->db->sendQuery("SELECT system_id FROM SystemDomain WHERE domain_name LIKE :origin",
-            ['origin' => '%' . $domain_name . '%'])->fetch());
-    }
 }

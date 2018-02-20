@@ -42,6 +42,7 @@ class UserSessionService implements SessionManagement
     }
 
     private function getNewSessionId() {
+        session_destroy();
         session_start();
         $id = session_id();
         $_SESSION = array();
