@@ -37,12 +37,12 @@ CREATE TABLE User (
 );
 
 CREATE TABLE SystemUserSession (
+  session_id VARCHAR(255) NOT NULL,
 	system_id INT(10) NOT NULL,
 	user_id INT(10) NOT NULL,
-	session_id VARCHAR(255) NOT NULL,
 	expires_at DATETIME NOT NULL,
 	created_at DATETIME NOT NULL,
-	CONSTRAINT PK_SystemUserSession PRIMARY KEY(system_id, user_id),
+	CONSTRAINT PK_SystemUserSession PRIMARY KEY(session_id),
 	CONSTRAINT FK_SystemUserSession FOREIGN KEY (system_id, user_id)
 		REFERENCES User(system_id, user_id)
 );

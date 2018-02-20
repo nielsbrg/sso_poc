@@ -8,17 +8,17 @@
 
     if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_GET['origin'])) {
         $userInput = array('username' => $_POST['username'], 'password' => $_POST['password']);
-        $authSucceeded = $authenticator->auth($_GET['origin'], $userInput);
+        $system_id = $systemService->getSystemByDomain($_GET['origin']);
+        $authSucceeded = $authenticator->auth($system_id, $userInput);
         if($authSucceeded) {
-            $session = $authenticator->getSession();
-            $sys_name = $systemService->getSystemNameById($session->system_id);
-            $SSOCookie = 'SSO_id='
-                . base64_encode($session->system_id)
-                . '.' . base64_encode($session->user_id)
-                . '.' . hash('sha256', SSO_PASSWORD)
-                . ';HttpOnly';
-            $sessionCookie = 'session_id_' . $sys_name . '=' . $session->session_id . ';HttpOnly' .
-                ';Expires=' . date('D, d M Y H:i:s', $session->expires_at_timestamp);
+            $expiresFormat = 'D, d M Y H:i:s';
+            $token = hash_hmac('sha256', SSO_PASSWORD, SSO_PRIVATE_KEY);
+            $expires_at = date($expiresFormat, time() + 60*30);
+            $SSOCookie = 'SSO_token=' . $token . ';HttpOnly' . ';Expires=' . $expires_at;
+            $session_id = $sessionManager->getNewSessionId();
+            $sessionCookie = 'session_id_' . $systemService->getSystemNameById($system_id) . '='
+                . $session_id . ';HttpOnly' .
+                ';Expires=' . $expires_at;
             header('Set-Cookie: ' . $sessionCookie, false);
             header('Set-Cookie: ' . $SSOCookie, false);
             header('Location: ' . 'http://' . $_GET['origin']);
@@ -28,14 +28,13 @@
             echo 'invalid credentials given';
         }
     }
-    else if(isset($_COOKIE['SSO_id']) && isset($_GET['origin'])) {
-        $values = preg_split('/[.]/', $_COOKIE['SSO_id']);
-        if(hash('sha256', SSO_PASSWORD) == $values[2]) {
-            $session = $sessionManager->getSessionForUser(base64_decode($values[0]), base64_decode($values[1]));
-            $sys_name = $systemService->getSystemNameById($systemService->getSystemByDomain($_GET['origin']));
-            if(!empty($sys_name) && !empty($session)) {
-                $expires_at_timestamp = DateTime::createFromFormat('Y-m-d H:i:s', $session['expires_at'])->getTimestamp();
-                $sessionCookie = 'session_id_' . $sys_name . '=' . $session['session_id'] . ';HttpOnly' .
+    else if(isset($_COOKIE['SSO_token']) && isset($_GET['origin'])) {
+        if(hash_hmac('sha256', SSO_PASSWORD, SSO_PRIVATE_KEY) == $_COOKIE['SSO_token']) {
+            $system_id = $systemService->getSystemByDomain($_GET['origin']);
+            $sys_name = $systemService->getSystemNameById($system_id);
+            if(!empty($sys_name) && !empty($newSession)) {
+                $expires_at_timestamp = DateTime::createFromFormat('Y-m-d H:i:s', $newSession['expires_at'])->getTimestamp();
+                $sessionCookie = 'session_id_' . $sys_name . '=' . $newSession['session_id'] . ';HttpOnly' .
                     ';Expires=' . date('D, d M Y H:i:s', $expires_at_timestamp);
                 header('Set-Cookie: ' . $sessionCookie, false);
                 header('Location: ' . 'http://' . $_GET['origin']);
@@ -43,7 +42,7 @@
             }
         }
         else {
-            die('There has been tampered with the SSO cookie!');
+            die('There has been tampered with the SSO token!');
         }
     }
     else if(empty($_GET['origin'])) {

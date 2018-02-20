@@ -41,11 +41,12 @@ class UserSessionService implements SessionManagement
         $this->db->sendQuery("INSERT INTO SystemUserSession(system_id, user_id, session_id, expires_at, created_at) VALUES(:sid, :uid, :sessid, :exp, :created)", $params);
     }
 
-    private function getNewSessionId() {
+    public function getNewSessionId() {
         session_destroy();
         session_start();
         $id = session_id();
         $_SESSION = array();
+        setcookie('PHPSESSID', null, -1);
         session_destroy();
         return $id;
     }
