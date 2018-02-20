@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8aa970a5-5980-4c6b-97fa-a84aa762deef" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/sso_idp/src/index.php" afterPath="$PROJECT_DIR$/sso_idp/src/index.php" />
-      <change beforePath="$PROJECT_DIR$/sso_idp/src/services/SessionGeneration.php" afterPath="$PROJECT_DIR$/sso_idp/src/services/SessionManagement.php" />
-      <change beforePath="$PROJECT_DIR$/sso_idp/src/services/SessionProvider.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sso_idp/src/services/UserSessionService.php" afterPath="$PROJECT_DIR$/sso_idp/src/services/UserSessionService.php" />
-      <change beforePath="$PROJECT_DIR$/sso_idp/src/services/UsernamePasswordAuthenticationService.php" afterPath="$PROJECT_DIR$/sso_idp/src/services/UsernamePasswordAuthenticationService.php" />
-      <change beforePath="$PROJECT_DIR$/sso_sp1/src/index.php" afterPath="$PROJECT_DIR$/sso_sp1/src/index.php" />
-      <change beforePath="$PROJECT_DIR$/sso_sp2/src/index.php" afterPath="$PROJECT_DIR$/sso_sp2/src/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,7 +56,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sso_sp2/src/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -75,6 +69,26 @@
                 <marker date="1519130289754" expanded="true" signature="938:1034" ph="..." />
                 <marker date="1519130289754" expanded="true" signature="1026:1034" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sso_idp/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sso_sp2/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -100,16 +114,6 @@
                 <marker date="1519130163788" expanded="true" signature="2563:2618" ph="..." />
                 <marker date="1519130163788" expanded="true" signature="2737:2766" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthenticationService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sso_idp/src/services/AuthenticationService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="87" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="87" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -220,65 +224,6 @@
               <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
               <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sso_idp" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sso_idp" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sql" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sso_idp" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sso_idp" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="services" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sso_sp1" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sso_sp1" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sql" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sso_sp1" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sso_sp2" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sso_sp2" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="sso_poc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso_poc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sso_sp2" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -333,18 +278,17 @@
       <workItem from="1518779005275" duration="13882000" />
       <workItem from="1519026867129" duration="27088000" />
       <workItem from="1519112162279" duration="12754000" />
-      <workItem from="1519125230397" duration="3014000" />
+      <workItem from="1519125230397" duration="3197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56738000" />
+    <option name="totallyTimeSpent" value="56921000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25799572" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25799572" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -377,29 +321,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sso_sp2/src/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding>
-            <marker date="1519130289754" expanded="true" signature="748:778" ph="..." />
-            <marker date="1519130289754" expanded="true" signature="748:858" ph="..." />
-            <marker date="1519130289754" expanded="true" signature="938:1003" ph="..." />
-            <marker date="1519130289754" expanded="true" signature="938:1004" ph="..." />
-            <marker date="1519130289754" expanded="true" signature="938:1034" ph="..." />
-            <marker date="1519130289754" expanded="true" signature="1026:1034" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sso_sp1/src/SessionValidation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sso_sp1/src/api/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -784,6 +705,22 @@
             <marker date="1519130289754" expanded="true" signature="938:1034" ph="..." />
             <marker date="1519130289754" expanded="true" signature="1026:1034" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sso_idp/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sso_sp2/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
