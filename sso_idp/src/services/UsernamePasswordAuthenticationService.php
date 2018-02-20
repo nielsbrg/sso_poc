@@ -1,57 +1,53 @@
 <?php
 
-require_once('AuthenticationService.php');
-
 class UsernamePasswordAuthenticationService implements AuthenticationService
 {
     private $db;
+    private $userMigrationService;
+    private $sessionGenerator;
+    private $session;
+    private $userInfo;
 
-    public function __construct() {
-        $this->db = new DatabaseConnection(DB_HOST, DB_NAME, DB_USER, DB_PASS);
+    public function __construct($db) {
+        $this->db = $db;
+        $this->userMigrationService = new UserMigrationService($db);
+        $this->sessionGenerator = new UserSessionService($db);
     }
 
     public function auth($origin, $userInput) {
-        $hashed_pw = password_hash($userInput['password'], PASSWORD_DEFAULT);
         $system_id = $this->getSystemByDomain($origin);
-        $user = $this->accessUserDetails($system_id, $userInput['username'], $hashed_pw);
-
-        if(!$user) {
-            $migrationApiUrl = $this->getMigrationApiById($system_id);
-            $apiAuthResponse = $this->authenticateWithMigrationApi($migrationApiUrl);
-            if($apiAuthResponse->succeeded) {
-                $apiValidateResponse = $this->validateUnknownUser($migrationApiUrl, $userInput, $apiAuthResponse->jwt);
-                if($apiValidateResponse['isValidUser']) {
-
-                }
+        $user = $this->userMigrationService->getUser($system_id, $userInput);
+        if($user) {
+            $this->onAuthenticatedUser($system_id, $user->user_id);
+            return true;
+        }
+        else {
+            $migrationResult = $this->userMigrationService->migrateUser($system_id, $userInput);
+            if($migrationResult) {
+                $this->onAuthenticatedUser($system_id, $migrationResult->user_id);
+                return true;
             }
         }
+        return false;
     }
 
-    private function accessUserDetails($systemId, $username, $password) {
-        return $this->db->sendQuery(
-            "SELECT * FROM User WHERE system_id=:sys_id AND username=:user AND password=:pass",
-            ['sys_id' => intval($systemId), 'user' => $username, 'pass' => $password])->fetch();
+    public function getSession() {
+        return $this->session;
+    }
+
+    public function getUserInfo() {
+        return $this->userInfo;
+    }
+
+    private function onAuthenticatedUser($system_id, $user_id) {
+        $this->sessionGenerator->deleteSessionsForUser($system_id, $user_id);
+        $this->session = $this->sessionGenerator->createNewSession($system_id, $user_id);
+        $this->userInfo = ['system_id' => $system_id, 'user_id' => $user_id];
+        $this->sessionGenerator->saveSession($this->session);
     }
 
     private function getSystemByDomain($domain_name) {
         return intval($this->db->sendQuery("SELECT system_id FROM SystemDomain WHERE domain_name LIKE :origin",
             ['origin' => '%' . $domain_name . '%'])->fetch());
-    }
-
-    private function getMigrationApiById($systemId) {
-        return $this->db->sendQuery("SELECT api_url FROM SystemMigrationApi WHERE system_id=:system_id",
-            ['system_id' => $systemId])->fetch()['api_url'];
-    }
-
-    private function authenticateWithMigrationApi($apiUrl) {
-        $response = Requests::post($apiUrl . '/auth', array(), array('sso_password' => SSO_PASSWORD));
-        return json_decode($response->body);
-    }
-
-    private function validateUnknownUser($apiUrl, $userInput, $authToken) {
-        //TODO: Check with origin API to see if input was valid locally.
-        $body = ['username' => $userInput['username'], 'password' => $userInput['password']];
-        $response = Requests::post($apiUrl . '/users/validate', array('Authorization' => 'Bearer ' . $authToken), $body);
-        return json_decode($response->body);
     }
 }

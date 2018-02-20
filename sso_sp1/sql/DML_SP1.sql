@@ -18,4 +18,12 @@ VALUES
 
 ('webshop','$2y$10$Skzvf/35YuZ2kBE.vr7PjuXcOFzTphyJ9b1sDs/tdMBoUr9d4pb6C',
 'nl', '2017-09-27', '0000-00-00', 1, 'drs.', 'Anja', 'von', 'Fickenstein', 'M', 'Wilhemstraße',
-4058, 'Q', '98745', 'Chemnitz', '', '060000000', 'anja@vonfickenstein.de', 'Kattentrimsalon de kale kat', '', 3, NOW(), NULL, NULL, NULL);
+4058, 'Q', '98745', 'Chemnitz', '', '060000000', 'anja@vonfickenstein.de', 'Kattentrimsalon de kale kat', '', 3, NOW(), NULL, NULL, NULL),
+
+('hpu','$2y$10$cQdsDwJjz4pYsMuWptQ4mOZ.BVCNS.WFYy9EipdbYT3M3VX9RjxXm',
+'nl', '2018-01-22', '0000-00-00', 1, '', 'Sander', '', 'Keurentjes', '', 'Innovatieweg',
+20, '', '7007CD', 'Doetinchem', 'nl', '0612345678', 'sander.k@hpu.nl', '', '', 1, NOW(), NULL, NULL, NULL),
+
+('hpu','$2y$10$XGm3kKextivxIhtKTlujVOTl9x4nif9SIBzcqpULM8AybLdqxT9Ni',
+'nl', '2018-01-22', '0000-00-00', 1, '', 'Sander', '', 'Keurentjes', '', 'Innovatieweg',
+20, '', '7007CD', 'Doetinchem', 'nl', '0612345678', 'sander.k@hpu.nl', '', '', 1, NOW(), NULL, NULL, NULL);

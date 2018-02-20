@@ -17,9 +17,23 @@ class UserValidationService implements ValidationService
     }
 
     public function validate($userInput) {
-        $user = $this->db->sendQuery("SELECT * FROM Users WHERE username=:username AND password=:password",
-            ['username' => $userInput['username'], 'password' => $userInput['password']])->fetch();
+        $users = $this->db->sendQuery("SELECT * FROM Users WHERE username=:username",
+            ['username' => $userInput['username']])->fetchAll();
 
-        return $user['username'] == $userInput['username'] && $user['password'] == $userInput['password'];
+        return $this->validateListOfUsers($users, $userInput['password']);
+    }
+
+    public function validateListOfUsers($users, $inputPassword) {
+        foreach($users as $user) {
+            if(password_verify($inputPassword, $user['password'])) {
+                return [
+                    'user_id' => intval($user['id']),
+                    'isValid' => true
+                ];
+            }
+        }
+        return [
+            'isValid' => false
+        ];
     }
 }

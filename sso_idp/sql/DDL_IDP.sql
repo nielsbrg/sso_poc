@@ -33,7 +33,7 @@ CREATE TABLE User (
 	password VARCHAR(255) NOT NULL,
 	CONSTRAINT PK_User PRIMARY KEY(system_id, user_id),
 	CONSTRAINT FK_User_System FOREIGN KEY (system_id) 
-		REFERENCES System (system_id)
+		REFERENCES System (system_id) ON DELETE CASCADE
 );
 
 CREATE TABLE SystemUserSession (

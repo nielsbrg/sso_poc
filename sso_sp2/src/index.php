@@ -1,14 +1,18 @@
 <?php
-require_once('config/sp_config.php');
+    require_once('config/sp_config.php');
 
-if(isset($_COOKIE['access_token'])) {
-    echo 'logged in';
-}
-else {
-    //TODO: redirect sso
-    header('Location: ' . $IDP_HOST.':'.$IDP_PORT . '?next=' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-    die();
-}
+    $target = IDP_HOST . ':' . IDP_PORT;
+    $origin = '?origin=' . $_SERVER['HTTP_HOST'];
+    $resource = '&resource='. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+    if(!isset($_COOKIE['session_id_2'])) {
+        header('Location:' .$target.$origin.$resource);
+        die();
+    }
+    else {
+        //TODO: validate session
+        echo 'logged in!';
+    }
 ?>
 
 <html>

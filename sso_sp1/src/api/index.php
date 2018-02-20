@@ -19,16 +19,15 @@ define('SECRET', 'secret:SSO_SP1');
 define('ISSUER', 'SSO_SP1_API');
 
 $app->post('/users/validate', function (Request $req, Response $res) {
-    $authHeader = str_replace('Bearer ', '', $req->getHeader('Authorization'));
+    $authHeader = str_replace('Bearer ', '', $req->getHeader('Authorization'))[0];
     $token = (new JWTParser())->parse($authHeader);
     $validation = new ValidationData();
     $validation->setIssuer(ISSUER);
     if($token->validate($validation)) {
         $validationService = new UserValidationService();
         $body = $req->getParsedBody();
-        $isValidUser = $validationService->validate(array('username' => $body['username'], 'password' => $body['password']));
-
-        return $res->withJson(['isValidUser' => $isValidUser]);
+        $returnData = $validationService->validate(array('username' => $body['username'], 'password' => $body['password']));
+        return $res->withJson($returnData);
     }
     else {
         return $res->withStatus(401)->withJson(['error' => 'supplied invalid access token']);
