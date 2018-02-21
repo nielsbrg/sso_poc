@@ -8,6 +8,7 @@ require_once('database/DatabaseConnection.php');
 
 require_once('models/User.php');
 require_once('models/UserSession.php');
+require_once('models/SSOSession.php');
 
 require_once('services/AuthenticationService.php');
 require_once('services/MigrationService.php');
@@ -15,5 +16,7 @@ require_once('services/SessionManagement.php');
 
 require_once('services/UserMigrationService.php');
 require_once('services/SystemService.php');
+require_once('services/BaseSessionService.php');
+require_once('services/SSOSessionService.php');
 require_once('services/UserSessionService.php');
 require_once('services/UsernamePasswordAuthenticationService.php');

@@ -23,6 +23,13 @@ class SystemService
         return $this->db->sendQuery("SELECT * FROM System WHERE system_id=:id", ['id' => $id])->fetch()['name'];
     }
 
+    public function getSystemByMasterSessionId($master_session_id) {
+        $query = "SELECT system_id FROM SSOSession WHERE master_session_id=:master_session_id";
+        $params = ['master_session_id' => $master_session_id];
+        $system_id = $this->db->sendQuery($query, $params)->fetch();
+        return $this->db->sendQuery("SELECT * FROM System WHERE system_id=:system_id", ['system_id' => $system_id])->fetch();
+    }
+
     public function getSystemNames() {
         return $this->db->sendQuery("SELECT name FROM System")->fetchAll();
     }
