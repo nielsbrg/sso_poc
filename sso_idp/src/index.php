@@ -46,9 +46,6 @@
     else if(empty($_GET['origin'])) {
         die('ERROR: There was no origin to redirect back to');
     }
-    else {
-
-    }
 ?>
 <html>
     <body>
