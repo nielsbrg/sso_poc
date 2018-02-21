@@ -25,7 +25,7 @@
 <html>
     <head></head>
     <body>
-        <h1>Service provider 1</h1>
+        <h1>Service provider 2</h1>
 
         <?php
             echo '<form method="POST">';
