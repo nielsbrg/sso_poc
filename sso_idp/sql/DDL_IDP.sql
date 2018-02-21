@@ -36,13 +36,24 @@ CREATE TABLE User (
 		REFERENCES System (system_id) ON DELETE CASCADE
 );
 
+CREATE TABLE SSOSession (
+  master_session_id VARCHAR(255) NOT NULL,
+  system_id INT(10) NOT NULL,
+  user_id INT(10) NOT NULL,
+  CONSTRAINT PK_SSOSession PRIMARY KEY(master_session_id),
+  CONSTRAINT FK_SSOSession_User FOREIGN KEY (system_id, user_id)
+    REFERENCES User(system_id, user_id)
+);
+
 CREATE TABLE SystemUserSession (
-  session_id VARCHAR(255) NOT NULL,
+  master_session_id VARCHAR(255) NOT NULL,
+  child_session_id VARCHAR(255) NOT NULL,
 	system_id INT(10) NOT NULL,
-	user_id INT(10) NOT NULL,
 	expires_at DATETIME NOT NULL,
 	created_at DATETIME NOT NULL,
-	CONSTRAINT PK_SystemUserSession PRIMARY KEY(session_id),
-	CONSTRAINT FK_SystemUserSession FOREIGN KEY (system_id, user_id)
-		REFERENCES User(system_id, user_id)
+	CONSTRAINT PK_SystemUserSession PRIMARY KEY(master_session_id, child_session_id),
+	CONSTRAINT FK_SystemUserSession_SSOSession FOREIGN KEY(master_session_id)
+	  REFERENCES SSOSession(master_session_id),
+	CONSTRAINT FK_SystemUserSession_System FOREIGN KEY (system_id)
+		REFERENCES System(system_id)
 );
