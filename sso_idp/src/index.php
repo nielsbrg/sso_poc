@@ -35,6 +35,7 @@
             $client_system_id = $systemService->getSystemByDomain($_GET['origin']);
             $client_session = $userSessionService->createNewSession($SSO_session->master_session_id, $client_system_id);
             $userSessionService->saveSession($client_session);
+            echo $userSessionService->getCookieString($client_session, $systemService->getSystemNameById($client_system_id));
             header($userSessionService->getCookieString($client_session, $systemService->getSystemNameById($client_system_id)), false);
             header('Location: ' . 'http://' . $_GET['origin']);
             die();
@@ -42,6 +43,9 @@
     }
     else if(empty($_GET['origin'])) {
         die('ERROR: There was no origin to redirect back to');
+    }
+    else {
+
     }
 ?>
 <html>

@@ -8,13 +8,13 @@
 
 interface SessionManagement
 {
-    /** Retrieves an active session for a user
-     * @param $session_id The user id that the user has in the local system
+    /** Retrieves a session
+     * @param $session_id string - user id that the user has in the local system
      * @return Session object from the db
      */
     public function getSessionForUser($session_id);
 
-    /** Generates a new session id
+    /** Saves a session to the database.
      * @param $session
      * @return mixed
      */

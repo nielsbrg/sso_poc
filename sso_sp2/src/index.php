@@ -25,22 +25,16 @@
 <html>
     <head></head>
     <body>
-        <h1>Service provider 2</h1>
+        <h1>Service provider 1</h1>
 
         <?php
-        if($loggedIn) {
-            echo '
-            <form method="POST">
-                <button name="logoutButton" type="submit" value="logout">Log out</button>
-            </form>
-            ';
-        }
-        else {
-            echo '
-            <form method="POST">
-                <button name="loginButton" type="submit" value="login">Log in</button>
-            ';
-        }
+            echo '<form method="POST">';
+            if($loggedIn) {
+                echo '<button name="logoutButton" type="submit" value="logout">Sign out</button>';
+            } else {
+                echo '<button name="loginButton" type="submit" value="login">Sign in</button>';
+            }
+            echo '</form>';
         ?>
     </body>
 </html>

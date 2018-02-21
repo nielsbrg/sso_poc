@@ -8,6 +8,12 @@
 
 class BaseSessionService
 {
+    protected $expiresFormat;
+
+    public function __construct($expiresFormat) {
+        $this->expiresFormat = $expiresFormat;
+    }
+
     public function getNewSessionId() {
         session_start();
         $id = session_id();
